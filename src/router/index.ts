@@ -5,7 +5,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'home',
       component: () => import('@/views/Home-View.vue')
+    }, {
+      path: '/gpt',
+      name: 'gpt',
+      component: () => import('@/views/gpt/Gpt-View.vue')
     }
   ]
 })
