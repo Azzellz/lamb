@@ -6,7 +6,10 @@
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import router from '@/router/index'
+// router.replace({ name: 'gpt' })
+</script>
 
 <style lang="less" scoped>
 #home-container {
