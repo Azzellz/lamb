@@ -26,8 +26,8 @@ jobs:
       - name: Set Up SSH 
         run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H 121.40.249.233 >> ~/.ssh/known_hosts
       # 将构建产物通过 SSH 上传到服务器
       - name: Upload build artifacts to server
