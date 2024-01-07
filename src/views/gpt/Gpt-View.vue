@@ -42,7 +42,7 @@
 import GptTalkCard from './Gpt-Talk-Card.vue'
 import GptTalkHistoryCard from './Gpt-Talk-History-Card.vue'
 import { NInput, NButton, NSpace, NDivider } from 'naive-ui'
-import { reactive, ref, toRaw } from 'vue'
+import { reactive, ref, toRaw, onUnmounted } from 'vue'
 import { Talk } from '@/models/talk'
 
 //初始化websocket
@@ -144,6 +144,11 @@ const reset = () => {
     historyTalks.value = []
 }
 //#endregion
+
+//注意一定要记得关!!!
+onUnmounted(() => {
+    ws.close()
+})
 </script>
 
 <style lang="less" scoped>
